@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+.leaflet-container {
+  z-index: 1;
+}
+
+/* Animation for user location marker */
+.pulse-marker {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(52, 211, 235, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(52, 211, 235, 0.4);
+  animation: pulse 2s infinite;
+  border: 3px solid white;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 235, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(52, 211, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 235, 0);
+  }
+}
+
+/* Fix aspect ratio for images and embedded media */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
